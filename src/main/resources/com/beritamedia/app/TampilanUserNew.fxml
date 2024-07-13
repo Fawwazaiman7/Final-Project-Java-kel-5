@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" prefWidth="1277.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beritamedia.app.controller.NewsController">
+    <AnchorPane id="AnchorPane" layoutX="10.0" maxHeight="1076.0" maxWidth="1275.0" minHeight="894.0" minWidth="1275.0" prefHeight="1018.0" prefWidth="1275.0">
+        <children>
+            <!-- Bagian Navbar -->
+            <Pane layoutX="134.0" layoutY="14.0" translateX="100.0">
+                <children>
+                    <TextField layoutX="615.0" layoutY="21.0" prefHeight="40.0" prefWidth="183.0" text="Cari . . . . .">
+                        <font>
+                            <Font size="17.0" />
+                        </font>
+                    </TextField>
+                    <ImageView fitHeight="26.0" fitWidth="40.0" layoutX="760.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@search-interface-symbol.png" />
+                        </image>
+                    </ImageView>
+                    <Pane layoutX="218.0" layoutY="65.0" prefHeight="67.0" prefWidth="744.0" />
+                    <Pane layoutX="179.0" layoutY="-1.0">
+                        <children>
+                            <Pane layoutX="-99.0" layoutY="7.0" prefHeight="67.0" prefWidth="305.0">
+                                <children>
+                                    <ImageView fitHeight="205.0" fitWidth="235.0" layoutX="-66.0" layoutY="-69.0" pickOnBounds="true">
+                                        <image>
+                                            <Image url="@Black_White_Elegant_Monogram_Initial_Name_Logo-removebg-preview.png" />
+                                        </image>
+                                    </ImageView>
+                                </children>
+                            </Pane>
+                        </children>
+                    </Pane>
+                    <ToolBar layoutX="33.0" layoutY="98.0" prefHeight="40.0" prefWidth="965.0" style="-fx-background-color: blue;">
+                        <items>
+                            <Button fx:id="btnTerbaru" mnemonicParsing="false" style="-fx-background-color: blue;" text="Terbaru" textFill="WHITE" />
+                            <Button fx:id="btnEdukasi" mnemonicParsing="false" style="-fx-background-color: blue;" text="Edukasi" textFill="WHITE" />
+                            <Button fx:id="btnGaya" mnemonicParsing="false" style="-fx-background-color: blue;" text="Gaya Hidup" textFill="WHITE" />
+                            <Button fx:id="btnEkonomi" mnemonicParsing="false" style="-fx-background-color: blue;" text="Ekonomi" textFill="WHITE" />
+                            <Button fx:id="btnOlahraga" mnemonicParsing="false" style="-fx-background-color: blue;" text="Olahraga" textFill="WHITE" />
+                            <Button fx:id="btnTeknologi" mnemonicParsing="false" style="-fx-background-color: blue;" text="Teknologi" textFill="WHITE" />
+                            <Button fx:id="btnHiburan" mnemonicParsing="false" style="-fx-background-color: blue;" text="Hiburan" textFill="WHITE" />
+                            <Button fx:id="btnTren" mnemonicParsing="false" style="-fx-background-color: blue;" text="Tren" textFill="WHITE" />
+                        </items>
+                    </ToolBar>
+
+                    <!-- Bagian Menu dan Dropdown -->
+                    <MenuButton fx:id="menuButton" layoutX="905.0" layoutY="22.0" prefHeight="40.0" prefWidth="69.0" textFill="WHITE">
+                        <items>
+                            <MenuItem fx:id="menuLogout" text="Logout" />
+                            <MenuItem fx:id="menuBookmark" text="Bookmark" />
+                        </items>
+                    </MenuButton>
+                </children>
+            </Pane>
+
+            <!-- Bagian Konten Berita -->
+            <Pane fx:id="newsPane" layoutX="0.0" layoutY="150.0" prefHeight="834.0" prefWidth="1275.0" translateX="100.0" AnchorPane.bottomAnchor="-90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+                <children>
+                    <ListView fx:id="listView" layoutX="166.0" prefHeight="710.0" prefWidth="965.0" />
+                </children>
+            </Pane>
+            <Button fx:id="refreshButton" layoutX="2.0" layoutY="1.0" prefHeight="26.0" prefWidth="62.0" text="Refresh" />
+        </children>
+    </AnchorPane>
+</ScrollPane>
