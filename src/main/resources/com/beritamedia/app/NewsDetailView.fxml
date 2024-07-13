@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beritamedia.app.controller.NewsDetailController">
+    <HBox prefHeight="26.0" prefWidth="1186.0" style="-fx-background-color: white;">
+        <Button fx:id="backButton" alignment="CENTER_RIGHT" graphicTextGap="10" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleBack" style="-fx-background-color: white;">
+            <graphic>
+                <ImageView fx:id="backIcon" />
+            </graphic>
+        </Button>
+        <Button fx:id="openBrowserButton" graphicTextGap="10" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleOpenBrowser" style="-fx-background-color: white;">
+            <graphic>
+                <ImageView fx:id="openBrowserIcon" />
+            </graphic>
+        </Button>
+        <Button fx:id="bookmarkButton" graphicTextGap="10" onAction="#handleBookmark" style="-fx-background-color: white;">
+            <graphic>
+                <ImageView fx:id="bookmarkIcon" />
+            </graphic>
+        </Button>
+    </HBox>
+    <WebView fx:id="webView" layoutY="30.0" />
+</AnchorPane>
