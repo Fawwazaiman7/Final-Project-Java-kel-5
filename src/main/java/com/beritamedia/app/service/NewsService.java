@@ -44,15 +44,4 @@ public class NewsService {
         }
         return allNews;
     }
-
-    public List<News> fetchNewsByCategory(String category) {
-        // Implementasikan logika untuk filter berita berdasarkan kategori jika API mendukung
-        List<News> filteredNews = new ArrayList<>();
-        for (News news : fetchAllNews()) {
-            if (news.getCategory().equalsIgnoreCase(category)) {
-                filteredNews.add(news);
-            }
-        }
-        return filteredNews;
-    }
 }

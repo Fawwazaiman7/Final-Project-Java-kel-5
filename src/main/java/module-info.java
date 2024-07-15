@@ -1,4 +1,4 @@
-module BeritaMedia {
+module BeritaKita {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.fasterxml.jackson.databind;
@@ -8,8 +8,11 @@ module BeritaMedia {
     requires java.desktop;
     requires javafx.web;
     requires javafx.swing;
+    requires javafx.graphics;
+    requires javafx.media;
+    requires javafx.base;
     requires java.sql;
-    requires jogl.all;
+    requires mysql.connector.j;
 
 
     opens com.beritamedia.app to javafx.fxml;
