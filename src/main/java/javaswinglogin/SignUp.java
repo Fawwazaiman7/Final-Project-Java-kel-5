@@ -171,6 +171,12 @@ public class SignUp extends JPanel {
         String emailText = emailAddress.getText();
         String passwordText = new String(pass.getPassword());
 
+        // Validasi email harus mengandung '@'
+        if (!emailText.contains("@")) {
+            JOptionPane.showMessageDialog(null, "Email harus mengandung simbol '@'.");
+            return;
+        }
+
         String url = "jdbc:mysql://localhost:3306/java_user_database";
         String user = "root";
         String pass = "";
@@ -192,6 +198,7 @@ public class SignUp extends JPanel {
         Login.display();
         SwingUtilities.getWindowAncestor(this).dispose();
     }
+
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {
         Login.display();
