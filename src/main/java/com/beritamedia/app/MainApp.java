@@ -16,6 +16,8 @@ public class MainApp extends Application {
             loader.setLocation(getClass().getResource("/com/beritamedia/app/TampilanUtama.fxml"));
             Parent root = loader.load();
 
+
+
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/beritamedia/app/logo.png")));

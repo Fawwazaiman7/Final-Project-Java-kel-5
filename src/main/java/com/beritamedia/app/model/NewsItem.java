@@ -19,9 +19,7 @@ public class NewsItem {
         return title;
     }
 
-    public String getLink() {
-        return link;
-    }
+    public String getLink() { return link; }
 
     public String getThumbnail() {
         return thumbnail;

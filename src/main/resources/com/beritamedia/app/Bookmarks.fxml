@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beritamedia.app.controller.BookmarksController">
+    <VBox spacing="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <Label style="-fx-font-size: 26px; -fx-background-color: #336699; -fx-text-fill: white;" text="Halaman Bookmark" textAlignment="CENTER" textFill="white">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+
+        <ListView fx:id="bookmarkListView" style="-fx-background-color: #f0f0f0; -fx-border-color: #336699; -fx-border-width: 2px;" VBox.vgrow="ALWAYS" focusTraversable="false">
+        </ListView>
+
+        <Button fx:id="clearButton" style="-fx-background-color: #FF3333; -fx-text-fill: white; -fx-font-size: 19px;" text="Kosongkan Bookmark">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+    </VBox>
+</AnchorPane>

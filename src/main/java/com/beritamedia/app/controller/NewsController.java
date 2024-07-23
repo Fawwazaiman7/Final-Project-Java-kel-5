@@ -2,11 +2,14 @@ package com.beritamedia.app.controller;
 
 import com.beritamedia.app.NewsCell;
 import com.beritamedia.app.model.NewsItem;
+import com.beritamedia.app.controller.BookmarksController;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.BoxBlur;
@@ -131,7 +134,7 @@ public class NewsController {
                 AnchorPane root = loader.load();
 
                 NewsDetailController detailController = loader.getController();
-                detailController.loadNews(selectedItem.getLink());
+                detailController.loadNews(selectedItem); // Kirim objek NewsItem
 
                 Stage stage = new Stage();
                 stage.setTitle(selectedItem.getTitle());
@@ -237,13 +240,21 @@ public class NewsController {
     }
 
     private void handleBookmark() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Bookmark");
-        alert.setHeaderText(null);
-        alert.setContentText("Fitur bookmark belum diimplementasikan.");
-        alert.showAndWait();
-    }
+        try {
+            // Load the Bookmarks.fxml file
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/com/beritamedia/app/Bookmarks.fxml"));
+            Parent root = loader.load();
 
+            // Create a new stage for the Bookmarks view
+            Stage stage = new Stage();
+            stage.setTitle("Bookmarks");
+            stage.setScene(new Scene(root, 800, 600));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @FXML
@@ -294,7 +305,7 @@ public class NewsController {
         if ("admin".equals(userType)) {
             menuButton.setText("Admin");
         } else {
-            menuButton.setText(userName );
+            menuButton.setText(userName);
         }
 
         // Mengaktifkan kembali tombol-tombol dan menghapus pemburamannya
@@ -408,4 +419,9 @@ public class NewsController {
 
         newsItems.add(new NewsItem(title, link, thumbnail, description, pubDate));
     }
+
+
+
 }
+
+
